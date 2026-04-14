@@ -1,0 +1,12 @@
+name: Devops CI Pipeline
+
+on: push
+
+jobs:
+  test:
+    runs-on:ubuntu-latest
+    steps:
+      - s1: my first step
+        run: echo Hello World
+        
+
