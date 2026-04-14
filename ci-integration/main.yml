@@ -9,13 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-    - name: Run Linux commands
+    - name: Run system commands
       run: |
-        echo "Starting CI Pipeline"
+        echo "Starting CI"
         uname -a
         df -h
         free -m
-        echo "Pipeline completed"
