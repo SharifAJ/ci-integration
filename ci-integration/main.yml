@@ -1,12 +1,21 @@
-name: Devops CI Pipeline
+name: DevOps CI Pipeline
 
-on: push
+on:
+  push:
+    branches: [ main ]
 
 jobs:
-  test:
-    runs-on:ubuntu-latest
-    steps:
-      - s1: my first step
-        run: echo Hello World
-        
+  build:
+    runs-on: ubuntu-latest
 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run Linux commands
+      run: |
+        echo "Starting CI Pipeline"
+        uname -a
+        df -h
+        free -m
+        echo "Pipeline completed"
